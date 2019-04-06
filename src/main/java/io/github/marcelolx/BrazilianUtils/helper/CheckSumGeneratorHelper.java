@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class CheckSumGeneratorHelper {
+		
+	private static int index;
 	
 	public static int generate(Integer baseNumber, Integer weights) {
 		
@@ -13,24 +15,32 @@ public class CheckSumGeneratorHelper {
 		return createChecksum(baseNumber.toString(), weightsArray);
 	}
 		
-	public static int generate(Integer baseNumber, Integer[] weight) {
+	public static int generate(Integer baseNumber, List<Integer> weights) {
 		
 				
-		return -1;		
+		return createChecksum(baseNumber.toString(), weights);
 	}
 	
 	private static int createChecksum(String cpfStart, List<Integer> weights) {
+		
 		Stream<Character> charStream = cpfStart.chars().mapToObj(c -> (char) c);
 		
-		//charStream.reduce((value, index) -> {});
+		index = 0;
 		
-		return -1;
+		return charStream.mapToInt(value -> Integer.parseInt(value.toString())).reduce(index, (a, b) -> {
+				
+			int result = a + b * weights.get(index);
+			
+			++index;
+			
+			return result;
+		});
 	}
 	
-	private static List<Integer> numberToWeightArray(int weight, int number) {
+	private static List<Integer> numberToWeightArray(int weight, int length) {
 		List<Integer> result = new ArrayList<>();
 		
-		for (int i = 0; i < number; i++) {
+		for (int i = 0; i < length; i++) {
 			result.add(weight - i);
 		}
 		

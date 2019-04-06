@@ -2,6 +2,10 @@ package io.github.marcelolx.brazilianutils.helper;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
 public class CheckSumGeneratorHelperTest {
@@ -17,8 +21,8 @@ public class CheckSumGeneratorHelperTest {
 	
 	@Test
 	public void testGenerateRightChecksum() {
-		Integer[] weight = {10, 9};
+		List<Integer> weights = new ArrayList<Integer>(Arrays.asList(10, 9));
 		
-		assertEquals(28, CheckSumGeneratorHelper.generate(baseNumber, weight));
+		assertEquals(28, CheckSumGeneratorHelper.generate(baseNumber, weights));
 	}
 }
