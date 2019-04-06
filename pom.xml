@@ -26,6 +26,6 @@
   </dependencies>
   
   <build>
-    <finalName>brazilian-utils.jar</finalName>
+    <finalName>brazilian-utils</finalName>
   </build>
 </project>
