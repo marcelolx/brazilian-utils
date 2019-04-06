@@ -1,7 +1,6 @@
 package io.github.marcelolx.brazilianutils.cpf;
 
 import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.BLACKLIST;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

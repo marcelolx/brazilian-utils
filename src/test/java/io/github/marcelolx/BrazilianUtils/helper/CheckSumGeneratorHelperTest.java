@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class CheckSumGeneratorHelperTest {
 
-	private static final Integer baseNumber = 12;
+	private static final String baseNumber = "12";
 	
 	@Test
 	public void testGenerateTheRightChecksum() {		
