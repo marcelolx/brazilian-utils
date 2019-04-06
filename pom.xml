@@ -24,4 +24,8 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+  <build>
+    <finalName>brazilian-utils.jar</finalName>
+  </build>
 </project>
