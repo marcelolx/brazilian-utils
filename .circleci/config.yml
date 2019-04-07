@@ -20,3 +20,8 @@ jobs:
       - run: mvn clean package install verify   
       - store_artifacts:
           path: target/brazilian-utils.jar
+workflows:  
+  workflow:
+    jobs:
+    - build
+    - codecov/codecov
