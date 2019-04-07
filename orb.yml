@@ -12,7 +12,7 @@ commands:
       file:
         description: Path to the code coverage data file to upload.
         type: string
-        default: ""
+        default: "target/site/jacoco/jacoco.xml"
       flags:
         description: Flag the upload to group coverage metrics (e.g. unittests | integration | ui,chrome)
         type: string
