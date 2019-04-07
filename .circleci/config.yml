@@ -17,8 +17,8 @@ jobs:
           paths:
             - ~/.m2
           key: brazilian-utils-{{ checksum "pom.xml" }}      
-      - run: mvn package      
-      - store_test_results:
-          path: target/surefire-reports      
+      - run: mvn clean package install verify
+      #- store_test_results:
+          #path: target/surefire-reports      
       - store_artifacts:
           path: target/brazilian-utils.jar
