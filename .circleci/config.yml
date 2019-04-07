@@ -17,11 +17,8 @@ jobs:
           paths:
             - ~/.m2
           key: brazilian-utils-{{ checksum "pom.xml" }}      
-      - run: mvn clean package install verify   
+      - run: mvn clean package install verify
+      - store_test_results:
+          path: target/site/jacoco/jacoco.xml
       - store_artifacts:
           path: target/brazilian-utils.jar
-workflows:  
-  workflow:
-    jobs:
-    - build
-    - codecov

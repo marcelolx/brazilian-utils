@@ -8,7 +8,7 @@ commands:
       conf:
         description: Used to specify the location of the .codecov.yml config file
         type: string
-        default: "codecov.yml"
+        default: .codecov.yml
       file:
         description: Path to the code coverage data file to upload.
         type: string
