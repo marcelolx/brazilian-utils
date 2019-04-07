@@ -1,8 +1,6 @@
 version: 2.1
-
 orbs:
   codecov: codecov/codecov@1.0.4
-
 jobs:
   build:
     working_directory: ~/brazilian-utils
@@ -22,3 +20,5 @@ jobs:
           path: target/site/jacoco/jacoco.xml
       - store_artifacts:
           path: target/brazilian-utils.jar
+      - codecov_upload:
+          file: "target/site/jacoco/jacoco.xml"
