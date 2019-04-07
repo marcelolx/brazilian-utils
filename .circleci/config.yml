@@ -20,5 +20,5 @@ jobs:
           path: target/site/jacoco/jacoco.xml
       - store_artifacts:
           path: target/brazilian-utils.jar
-      - codecov_upload:
+      - codecov/upload:
           file: "target/site/jacoco/jacoco.xml"
