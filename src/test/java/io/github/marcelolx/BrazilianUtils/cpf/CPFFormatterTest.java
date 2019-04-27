@@ -18,6 +18,7 @@ public class CPFFormatterTest {
 
 	@Test
 	public void testFormatSuccess() {
+	  assertEquals("", cpfFormatter.format(null));
 	  assertEquals("", cpfFormatter.format(""));
 	  assertEquals("9", cpfFormatter.format("9"));
 	  assertEquals("94", cpfFormatter.format("94"));

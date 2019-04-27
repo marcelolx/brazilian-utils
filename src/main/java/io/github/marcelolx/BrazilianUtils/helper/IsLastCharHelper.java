@@ -6,4 +6,7 @@ public class IsLastCharHelper {
 		return index == str.length() - 1;
 	}
 	
+	private IsLastCharHelper() {		
+	}
+	
 }
