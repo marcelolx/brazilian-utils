@@ -23,6 +23,10 @@ public class CPFConstants {
 	
 	public static final List<Integer> CHECK_DIGITS = new ArrayList<Integer>(Arrays.asList(9, 10));
 	
+	public static final List<Integer> DOT_INDEXES = new ArrayList<Integer>(Arrays.asList(2, 5));
+	
+	public static final Integer HYPHEN_INDEX = 8;
+	
 	private CPFConstants() {		
 	}
 
