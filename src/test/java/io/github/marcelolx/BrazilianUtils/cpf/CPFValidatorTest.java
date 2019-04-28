@@ -57,5 +57,10 @@ public class CPFValidatorTest {
 	public void testWhenIsACPFValidWithMask() {
 		assertTrue(cpfValidator.isValid("962.718.458-60"));
 	}
+	
+	@Test
+	public void testWhenIsACPFInvalidTestNumbersWithLetters() {
+		assertFalse(cpfValidator.isValid("foo391.838.38test0-66"));
+	}
 
 }
