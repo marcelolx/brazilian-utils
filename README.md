@@ -6,3 +6,4 @@
 Utils library for specific Brazilian businesses in Java.
 
 # License
+[MIT](https://github.com/marcelolx/brazilian-utils/blob/master/LICENSE)
