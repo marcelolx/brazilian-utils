@@ -1,6 +1,5 @@
 package io.github.marcelolx.brazilianutils.cpf.impl;
 
-import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.CPF_LENGTH;
 import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.blacklist;
 import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.checkDigits;
 
@@ -18,12 +17,8 @@ public class CPFValidatorImpl implements CPFValidator {
 
 		String numericCPF = OnlyNumbersHelper.get(cpf);
 
-		return isValidCPFFormat(cpf) && isValidLength(numericCPF) && !belongsToBlacklist(numericCPF)
+		return isValidCPFFormat(cpf) && !belongsToBlacklist(numericCPF)
 				&& isValidChecksum(numericCPF);
-	}
-
-	private Boolean isValidLength(String cpf) {
-		return cpf.length() == CPF_LENGTH;
 	}
 
 	private Boolean belongsToBlacklist(String cpf) {
