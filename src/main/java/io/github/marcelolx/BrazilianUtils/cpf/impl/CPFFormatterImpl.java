@@ -37,9 +37,18 @@ public class CPFFormatterImpl implements CPFFormatter {
 		String result = acumulator + currentValue;
 		
 		if (!IsLastCharHelper.verify(index, numericCPF)) {
-			if (dotIndexes().contains(index)) return result + ".";
-			if (HYPHEN_INDEX.equals(index)) return result + "-";
+			result = formatToDotHyphenOrDoNothing(index, result);
 		}
+		
+		return result;
+	}
+	
+	private String formatToDotHyphenOrDoNothing(Integer index, String cpf) {
+		
+		String result = cpf;
+		
+		if (dotIndexes().contains(index)) result += ".";
+		if (HYPHEN_INDEX.equals(index)) result += "-";
 		
 		return result;
 	}
