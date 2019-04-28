@@ -2,11 +2,8 @@ package io.github.marcelolx.brazilianutils.helper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class CheckSumGeneratorHelper {
-
-	private static int index;
 
 	public static int generate(String baseNumber, Integer weights) {
 
@@ -24,18 +21,19 @@ public class CheckSumGeneratorHelper {
 
 	private static int createChecksum(String cpfStart, List<Integer> weights) {
 
-		Stream<Character> charStream = cpfStart.chars().mapToObj(c -> (char) c);
+		String[] cpfStartSplitted = cpfStart.split("");
+		int result = 0;
+		
+		for (int index = 0; index < cpfStartSplitted.length; index++) {
+			result = calcCheckSum(index, weights, result, Integer.parseInt(cpfStartSplitted[index]));
+		}
+		
+		return result;
+	}
+	
+	private static int calcCheckSum(Integer index, List<Integer> weights, Integer acumulator, Integer currentValue) {
 
-		index = 0;
-
-		return charStream.mapToInt(value -> Integer.parseInt(value.toString())).reduce(index, (a, b) -> {
-
-			int result = a + b * weights.get(index);
-
-			++index;
-
-			return result;
-		});
+		return acumulator + currentValue * weights.get(index);
 	}
 
 	private static List<Integer> numberToWeightArray(int weight, int length) {

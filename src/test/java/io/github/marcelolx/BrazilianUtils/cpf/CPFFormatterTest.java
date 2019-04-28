@@ -30,7 +30,7 @@ public class CPFFormatterTest {
 	  assertEquals("943.895.75", cpfFormatter.format("94389575"));
 	  assertEquals("943.895.751", cpfFormatter.format("943895751"));
 	  assertEquals("943.895.751-0", cpfFormatter.format("9438957510"));
-	  assertEquals("943.895.751-04", cpfFormatter.format("94389575104"));	  
+	  assertEquals("943.895.751-04", cpfFormatter.format("94389575104"));
 	}
 	
 	@Test

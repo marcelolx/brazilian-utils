@@ -1,7 +1,7 @@
 package io.github.marcelolx.brazilianutils.cpf.impl;
 
-import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.BLACKLIST;
-import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.CHECK_DIGITS;
+import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.blacklist;
+import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.checkDigits;
 import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.CPF_LENGTH;
 
 import io.github.marcelolx.brazilianutils.cpf.CPFValidator;
@@ -26,11 +26,11 @@ public class CPFValidatorImpl implements CPFValidator {
 	}
 	
 	private Boolean belongsToBlacklist(String cpf) {
-		return BLACKLIST.contains(cpf);
+		return blacklist().contains(cpf);
 	}
 	
 	private Boolean isValidChecksum(String cpf) {
-		return CHECK_DIGITS.stream().allMatch(verifierPos -> {
+		return checkDigits().stream().allMatch(verifierPos -> {
 			
 			String cpfMatched = cpf.substring(0, verifierPos);
 			

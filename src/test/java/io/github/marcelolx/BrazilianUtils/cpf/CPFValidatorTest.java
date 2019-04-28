@@ -1,6 +1,6 @@
 package io.github.marcelolx.brazilianutils.cpf;
 
-import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.BLACKLIST;
+import static io.github.marcelolx.brazilianutils.cpf.consts.CPFConstants.blacklist;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -20,7 +20,7 @@ public class CPFValidatorTest {
 
 	@Test
 	public void testWhenItIsOnTheBlackList() {
-		BLACKLIST.forEach(cpf -> assertFalse(cpfValidator.isValid(cpf)));
+		blacklist().forEach(cpf -> assertFalse(cpfValidator.isValid(cpf)));
 	}
 	
 	@Test
